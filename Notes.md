@@ -4,6 +4,7 @@
 - [Data types and variables](#data-types-and-variables)
   - [Data types](#data-types)
   - [Variables](#variables)
+  - [Scope](#scope)
 - [Operators](#operators)
 - [Escaping](#escaping)
   - [Escape characters](#escape-characters)
@@ -12,6 +13,7 @@
   - [Concatenation](#concatenation)
   - [Lenght](#lenght)
   - [String manipulation](#string-manipulation)
+  - [Converting `string` in integer](#converting-string-in-integer)
 - [Arrays](#arrays)
   - [Nested arrays](#nested-arrays)
   - [`push`](#push)
@@ -22,6 +24,7 @@
 - [Functions](#functions)
 - [Control flow statements](#control-flow-statements)
   - [`if-else`](#if-else)
+  - [Inline `if`](#inline-if)
   - [`switch`](#switch)
   - [`while` loop](#while-loop)
   - [`for` loop](#for-loop)
@@ -34,6 +37,8 @@
   - [Check object properties](#check-object-properties)
   - [Object array](#object-array)
   - [Nesed object](#nesed-object)
+- [Random number](#random-number)
+  - [Random whole number](#random-whole-number)
 
 ## Comments
 
@@ -82,6 +87,19 @@ There are 3 ways to declare variables in javascript:
 >
 > When a variable is declared, it contains `null` by default.
 
+### Scope
+
+It is recommended to use `let` or `const` because `var` is dangerous:
+
+```js
+let variableOutside = "something";
+let variableOutside = "another value";
+```
+
+This code doesn't work because `variableOutside` cannot be declared two times in the same scope.
+\
+`var` allows to redeclare variables many times in the same scope instead.
+
 ## Operators
 
 - `=`: assignment;
@@ -110,7 +128,8 @@ There are 3 ways to declare variables in javascript:
 
 - `>`, `<`, `>=`, `<=`: respectively greater than, less than, greater than or equal, less than or equal operators;
 - `&&`: logical and operator;
-- `||`: logical or operator.
+- `||`: logical or operator;
+- `?`: ternary operator.
 
 ## Escaping
 
@@ -178,6 +197,20 @@ var firstLetter = str[0];
 > [!WARNING] Immutable strings
 >
 > Strings are immutable, so it is impossible to change value of a single letter.
+
+### Converting `string` in integer
+
+```js
+var int = parseInt("43");
+```
+
+> [!IMPORTANT]
+> 
+> It is possible to specify the base:
+> 
+> ```js
+> var intBin = parseInt("01101", 2);
+> ```
 
 ## Arrays
 
@@ -261,6 +294,20 @@ if (condition1) {
 } else {
 
 }
+```
+
+### Inline `if`
+
+```js
+var output = a === b ? 1 : 0;
+```
+
+`output` is 1 if the condition is true, 0 otherwise.
+
+It is possible in javascript to build multiple conditions with the ternary operator:
+
+```js
+var output = a < 5 ? "less than 5" : a < 10 ? "less than 10" : "10 or more";
 ```
 
 ### `switch`
@@ -418,4 +465,31 @@ var someObject = {
 ```
 
 As you can see, there is a property which is an object with its own properties.
+
+## Random number
+
+```js
+var rnd = Math.random();
+```
+
+> [!WARNING]
+> This random function returns a random number between 0 and 1, **excluding** 1.
+
+### Random whole number
+
+For example, we want a whole number between 0 and 19:
+
+```js
+var wholeRnd = Math.floor(Math.random() * 20);
+```
+
+`floor` rounds the result of the expression passed as argument to the nearest whole number.
+
+> [!TIP] Range
+>
+> ```js
+> var min = 3;
+> var max = 9;
+> var rndInRange = Math.floor(Math.random() * (max - min + 1)) + min;
+> ```
 
