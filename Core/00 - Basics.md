@@ -102,11 +102,13 @@ To avoid mistakes or unsafe actions, since javascript performs a lot of hidden a
 "use strict";
 ```
 
-Adding this line of code to a block, the javascript interpreter does these actions:
+Adding this line of code to a block, the javascript interpreter performs:
 
-- Eliminates some javaScript silent errors by changing them to throw errors;
-- Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode;
-- Prohibits some syntax likely to be defined in future versions of ECMAScript.
+- Changes converting mistakes into errors (as syntax errors or at runtime);
+- Changes simplifying how variable references are resolved;
+- Changes simplifying `eval` and `arguments`;
+- Changes making it easier to write "secure" JavaScript;
+- Changes anticipating future ECMAScript evolution.
 
 > [!WARNING]
 >
