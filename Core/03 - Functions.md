@@ -129,6 +129,10 @@ For instance, we can consider to have 2 files in the same directory:
 > [!IMPORTANT] Naming
 > If you do not rename exported elements, you must use exactly same names used in the exported module.
 
+> [!NOTE] Strict mode
+>
+> Imported modules are in strict mode by default.
+
 It is also possible to define one `default` export per module:
 
 ```js
