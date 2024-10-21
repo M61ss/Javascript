@@ -245,6 +245,10 @@ var variable = new SomeClass("parameter");
 >
 > There is no need to declare `prop` because it is created calling `this.prop`.
 
+> [!NOTE] Strict mode
+>
+> All classes are in strict mode since their declaration by default. 
+
 There is another way to build class, even if it is terrible, so **DO NOT DO THIS**:
 
 ```js
