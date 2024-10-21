@@ -105,7 +105,22 @@ To avoid mistakes or unsafe actions, since javascript performs a lot of hidden a
 Adding this line of code to a block, the javascript interpreter performs:
 
 - Changes converting mistakes into errors (as syntax errors or at runtime);
-- Changes simplifying how variable references are resolved;
+- Changes simplifying how variable references are resolved. 
+  \
+  For instance:
+
+  ```js
+  "use strict";
+  let mistypeVariable;
+
+  // Assuming no global variable mistypeVarible exists
+  // this line throws a ReferenceError due to the
+  // misspelling of "mistypeVariable" (lack of an "a")
+  mistypeVarible = 17;
+  ```
+
+  In sloppy mode, that is to say javascript code without `"use script";` statement, javascript silently creates a property, called `mistypeVarible`, in the global object `mistypeVariable`. In most cases, it is not desired.
+
 - Changes simplifying `eval` and `arguments`;
 - Changes making it easier to write "secure" JavaScript;
 - Changes anticipating future ECMAScript evolution.
