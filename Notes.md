@@ -23,7 +23,9 @@
 - [Control flow statements](#control-flow-statements)
   - [`if-else`](#if-else)
   - [`switch`](#switch)
-  - [Loops](#loops)
+  - [`while` loop](#while-loop)
+  - [`for` loop](#for-loop)
+  - [`do-while` loop](#do-while-loop)
 - [Objects](#objects)
   - [Accessing object properties](#accessing-object-properties)
   - [Update object properties](#update-object-properties)
@@ -276,7 +278,7 @@ switch(val) {
 >
 > The equality between `switch` parameter and `case` parameters is checked with the `===` operator.
 
-### Loops
+### `while` loop
 
 ```js
 while (i < 3) {
@@ -284,11 +286,15 @@ while (i < 3) {
 }
 ```
 
+### `for` loop
+
 ```js
 for (var i = 0; i < 5; i++) {
   // ...
 }
 ```
+
+### `do-while` loop
 
 ```js
 do {
