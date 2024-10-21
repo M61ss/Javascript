@@ -6,6 +6,7 @@
   - [`var`](#var)
   - [`let`](#let)
   - [`const`](#const)
+  - [Strict mode](#strict-mode)
 - [Operators](#operators)
 
 > [**RETURN to full index**](Index.md)
@@ -93,15 +94,23 @@ const MYNAME = "Mattia";
 >
 > When a variable is declared, it contains `null` by default.
 
-> [!NOTE] Strict mode
+### Strict mode
+
+To avoid mistakes or unsafe actions, since javascript performs a lot of hidden and unsafe operations, some people add at the start of the file or inside a function this line:
+
+```js
+"use strict";
+```
+
+Adding this line of code to a block, the javascript interpreter does these actions:
+
+- Eliminates some javaScript silent errors by changing them to throw errors;
+- Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode;
+- Prohibits some syntax likely to be defined in future versions of ECMAScript.
+
+> [!WARNING]
 >
-> To avoid coding mistakes or unsafe actions, some people add at the start of the file or inside a function the line:
->
-> ```js
-> "use strict";
-> ```
->
-> This catches coding mistakes like usage of undeclared variables.
+> Browsers not supporting strict mode will run strict mode code with different behavior from browsers that do, so don't rely on strict mode without feature-testing for support for the relevant aspects of strict mode.
 
 ## Operators
 

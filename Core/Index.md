@@ -7,6 +7,7 @@
     - [`var`](00%20-%20Basics.md#var)
     - [`let`](00%20-%20Basics.md#let)
     - [`const`](00%20-%20Basics.md#const)
+    - [Strict mode](00%20-%20Basics.md#strict-mode)
   - [Operators](00%20-%20Basics.md#operators)
 - [01 - Strings](01%20-%20Strings.md)
   - [Escaping](01%20-%20Strings.md#escaping)
