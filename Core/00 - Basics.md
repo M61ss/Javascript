@@ -22,14 +22,16 @@ multi-line comment
 
 ## Data types
 
-- `undefined`: something that isn't defined;
-- `null`: it corresponds to "nothing". A variable that contains `null` means that contains nothing;
 - `boolean`;
 - `string`;
 - `symbol`;
-- `number`;
+- `number`: it is an 8 byte floating point, so there is no distinction between floating point numbers and integers;
 - `object`.
 
+A variable is `null` since it is not declared. Then, a variable contains `undefined` since it is not initialized.
+
+If a function performs a forbidden operation, then the variable which store the result contains `NaN`.
+ 
 ## Variables
 
 ### `var`
