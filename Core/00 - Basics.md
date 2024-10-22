@@ -92,7 +92,7 @@ const MYNAME = "Mattia";
 
 > [!IMPORTANT] Declaring without initializing
 >
-> When a variable is declared, it contains `null` by default.
+> When a variable is declared, it contains `undefined` by default.
 
 ### Strict mode
 
