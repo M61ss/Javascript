@@ -73,7 +73,7 @@ var lenght = str.lenght;
 
 > [!NOTE] Automatic boxing
 >
-> Javascript performs automatic boxing on `string` into `String`, so `str` can use all `String` methods.
+> Javascript performs autoboxing on `string` into its wrapper object, `String`, so `str` can use all `String` methods.
 
 ### String manipulation
 
