@@ -36,7 +36,7 @@ There are also `NaN` and `infinite` which are return values of forbidden arithme
 
 > [!IMPORTANT] Autoboxing
 >
-> All data types in javascript are autoboxed to their wrapper, so it is possible to use methods of wrapper objects on primitives data types wrapped from them.
+> `boolean`, `number` and `string` in javascript are autoboxed to their wrapper, respectively `Boolean`, `Number` and `String`, so it is possible to use methods of wrapper objects on primitives data types wrapped from them.
  
 ## Variables
 

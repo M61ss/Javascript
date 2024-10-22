@@ -9,6 +9,7 @@
   - [String manipulation](#string-manipulation)
   - [Converting `string` in integer](#converting-string-in-integer)
   - [Template literals](#template-literals)
+- [Regular expressions](#regular-expressions)
 
 > [**RETURN to full index**](Index.md)
 
@@ -107,4 +108,12 @@ var person = {
   age: 21
 }
 var string = `My name is ${person.name} and I am ${person.age} old!`
+```
+
+## Regular expressions
+
+```js
+var re = /[abc]/;
+// Or
+var re = new RegExp("[abc]");
 ```

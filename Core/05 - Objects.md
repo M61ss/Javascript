@@ -13,7 +13,9 @@
   - [`freeze`](#freeze)
   - [Destructuring assignment](#destructuring-assignment)
   - [Simple fields](#simple-fields)
-  - [Declarative functions (methods)](#declarative-functions-methods)
+  - [Methods](#methods)
+  - [Constructors](#constructors)
+  - [Static methods](#static-methods)
 - [Class](#class)
   - [Getters and setters](#getters-and-setters)
 - [`Symbol`](#symbol)
@@ -249,7 +251,16 @@ It is possible to create functions that returns object in a very compact way:
 const createPerson = (name, age) => ( { name, age } );
 ```
 
-### Declarative functions (methods)
+### Methods
+
+```js
+var obj = {
+  prop: 1,
+  prop2: function(param) {
+    // ...
+  }
+}
+```
 
 It is possible in javascript to declare and assign a function to an object property very fast:
 
@@ -264,9 +275,34 @@ var obj = {
 
 `fun` is an `obj` property. It works like Java's methods.
 
-> [!NOTE]
+> [!WARNING]
 >
-> By default, objects, like all data types, has no methods or properties. However, they can use all methods and properties of `Object` thanks javascript autoboxing feature.
+> `object` is not wrapped by `Object`, so it has no methods at it creation.
+
+### Constructors
+
+Since in javascript objects has no constructor, it is possible to create functions which works as constructors as well:
+
+```js
+function SomeConstructor(prop) {
+  this.prop = prop;
+  // ...
+}
+var someObject = new SomeConstructor("parameter");
+```
+
+### Static methods
+
+Since constructors are functions, but functions are objects, so it is not necessary to assign them to a variable to access its methods or properties:
+
+```js
+function SomeConstructor(prop) {
+  this.prop = prop;
+}
+SomeConstructor.prop2 = "value";
+```
+
+`prop2` has been added to `SomeConstructor` statically.
 
 ## Class
 
@@ -289,16 +325,6 @@ var variable = new SomeClass("parameter");
 > [!NOTE] Strict mode
 >
 > All classes are in strict mode since their declaration by default. 
-
-There is another way to build class, even if it is terrible, so **DO NOT DO THIS**:
-
-```js
-var SomeConstructor = function(prop) {
-  this.prop = prop;
-}
-
-var someClass = new SomeConstructor("don't do this please");
-```
 
 ### Getters and setters
 

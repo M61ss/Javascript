@@ -2,6 +2,7 @@
 
 - [Functions](#functions)
   - [Default parameters](#default-parameters)
+  - [`void`](#void)
   - [Destructured parameters](#destructured-parameters)
   - [High level functions](#high-level-functions)
   - [Stream](#stream)
@@ -31,6 +32,17 @@ function fun(parameter1, parameter2 = 1) {
 }
 ```
 
+### `void`
+
+The `void` operator evaluates the given expression and then returns `undefined`>
+
+```js
+const output = void 1;
+console.log(output);    // output: undefined
+
+var ret = void console.log('expression evaluated');   // ret contains undefined
+```
+
 ### Destructured parameters
 
 ```js
@@ -58,6 +70,12 @@ It is possible to store function inside variables:
 var fun = function() {
   // ...
 };
+```
+
+Functions can be created with a constructor notation because they are objects:
+
+```js
+var fun = new Function("param1", "param2", "return x + y;");
 ```
 
 Javascript has its own lambda notation:
