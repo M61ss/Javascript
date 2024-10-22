@@ -72,6 +72,14 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
+To scroll object properties:
+
+```js
+for (property in obj) {
+  // ...
+}
+```
+
 ### `do-while` loop
 
 ```js

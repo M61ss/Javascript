@@ -277,7 +277,7 @@ var obj = {
 
 > [!WARNING]
 >
-> `object` is not wrapped by `Object`, so it has no methods at it creation.
+> `object` is not wrapped by `Object`, however, it inherits `Objects.prototype`, which is a set of methods of `Object`; for example, `toString` or `hasOwnProperty`.
 
 ### Constructors
 
