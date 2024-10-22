@@ -44,6 +44,8 @@ var str = `I can put 'single quotes' and "double quotes" inside and no error occ
 
 ## Strings
 
+Strings in javascript are UNICODE.
+
 ### Concatenation
 
 ```js
