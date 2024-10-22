@@ -7,7 +7,6 @@
     - [`var`](00%20-%20Basics.md#var)
     - [`let`](00%20-%20Basics.md#let)
     - [`const`](00%20-%20Basics.md#const)
-    - [Special values](00%20-%20Basics.md#special-values)
     - [`typeof` operator](00%20-%20Basics.md#typeof-operator)
     - [Strict mode](00%20-%20Basics.md#strict-mode)
   - [Operators](00%20-%20Basics.md#operators)

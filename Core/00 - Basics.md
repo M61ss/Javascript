@@ -6,7 +6,6 @@
   - [`var`](#var)
   - [`let`](#let)
   - [`const`](#const)
-  - [Special values](#special-values)
   - [`typeof` operator](#typeof-operator)
   - [Strict mode](#strict-mode)
 - [Operators](#operators)
@@ -24,11 +23,16 @@ multi-line comment
 
 ## Data types
 
+- `undefined`: it means that a variable contains nothing;
+- `null`: it means that something does not exist at all;
 - `boolean`;
 - `string`;
 - `symbol`: it is a special data type which works as an unique identifier (see [Symbol](05%20-%20Objects.md#symbol));
 - `number`: it is an 8 byte floating point, so there is no distinction between floating point numbers and integers;
+- `bigint`: it is a number not representable with a 64-bit variable;
 - `object`.
+
+There are also `NaN` and `infinite` which are return values of forbidden arithmetic operations.
  
 ## Variables
 
@@ -93,12 +97,6 @@ const MYNAME = "Mattia";
 > [!IMPORTANT] Declaring without initializing
 >
 > When a variable is declared, it contains `undefined` by default.
-
-### Special values
-
-A variable is `null` since it is not declared. Then, a variable contains `undefined` since it is not initialized.
-
-If a function performs a forbidden operation, then the variable which store the result contains `NaN` or `infinite`.
 
 ### `typeof` operator
 
