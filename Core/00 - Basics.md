@@ -33,6 +33,10 @@ multi-line comment
 - `object`.
 
 There are also `NaN` and `infinite` which are return values of forbidden arithmetic operations.
+
+> [!IMPORTANT] Autoboxing
+>
+> All data types in javascript are autoboxed to their wrapper, so it is possible to use methods of wrapper objects on primitives data types wrapped from them.
  
 ## Variables
 

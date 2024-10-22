@@ -71,10 +71,6 @@ var str = "string";
 var lenght = str.lenght;
 ```
 
-> [!NOTE] Automatic boxing
->
-> Javascript performs autoboxing on `string` into its wrapper object, `String`, so `str` can use all `String` methods.
-
 ### String manipulation
 
 Obtain the first letter:
