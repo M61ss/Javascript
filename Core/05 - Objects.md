@@ -3,6 +3,7 @@
 - [Objects](#objects)
   - [Object types](#object-types)
   - [Accessing object properties](#accessing-object-properties)
+    - [Brackets notation](#brackets-notation)
   - [Update object properties](#update-object-properties)
   - [Add object properties](#add-object-properties)
   - [Delete object properties](#delete-object-properties)
@@ -15,6 +16,8 @@
   - [Declarative functions](#declarative-functions)
 - [Class](#class)
   - [Getters and setters](#getters-and-setters)
+- [`Symbol`](#symbol)
+  - [`Symbol` as property](#symbol-as-property)
 - [Random numbers](#random-numbers)
   - [Random whole number](#random-whole-number)
 
@@ -72,19 +75,20 @@ Built-in object types can be:
 - `intarray`;
 - `floatarray`;
 - `promise`; 
-- ...more. 
+- ...more, see [MDN Docs - Built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects). 
 
 > [!WARNING]
 >
 > Anyway, the `typeof` operator will return `object` if tested on any type of objects listed above.
 
 ### Accessing object properties
-
-- Regular property:
   
-  ```js
-  var objectProperty = someObject.name;
-  ```
+```js
+var objectProperty = someObject.name;
+```
+
+#### Brackets notation
+
 - Property identified by a number:
 
   ```js
@@ -92,10 +96,17 @@ Built-in object types can be:
   var objectProperty = someObject[accessKey];
   ```
   
-- Property of which name contains one or more spaces (brackets notation):
+- Property identified by a string which contains one or more spaces:
 
   ```js
   var objectProperty = someObject["property with spaces"];
+  ```
+
+- Property identified by a `symbol`: 
+
+  ```js
+  var mySymbol = new Symbol("id");
+  var objectProperty = someObject[mySymbol];
   ```
 
 ### Update object properties
@@ -296,6 +307,72 @@ class SomeClass {
     this.prop = param
   }
 }
+```
+
+## `Symbol`
+
+`Symbol` is a built-in object whose constuctor returns a `symbol`. This is the unique way to create a `symbol`.
+
+```js
+var sym1 = Symbol("string");
+```
+
+Each `Symbol` is unique:
+
+```js
+var sym1 = Symbol("string");
+var sym2 = Symbol("string");
+sym1 === sym2     // FALSE
+```
+
+It is possible to retrive a `symbol` previously created knowing the `"key"` used to generate it:
+
+```js
+var sym = Symbol("id");
+// ...
+var copyOfSym = Symbol.for("id");
+```
+
+At the same way, it is possible to retrive the `"key"` from a `symbol`:
+
+```js
+var sym = Symbol("id");
+// ...
+var keyOfSym = Symbol.keyFor(sym);
+```
+
+> [!WARNING]
+>
+> It is impossible to instantiate a `Symbol` with the `new` keyword. 
+> \
+> The only way to create a `Symbol` wrapper is:
+>
+> ```js
+> var sym = Symbol("str");
+> var symWrapper = Object(sym);
+> ```
+
+More at [MDN - Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol).
+
+### `Symbol` as property
+
+A `symbol` can be an identifier for object properties using this notation:
+
+```js
+var sym = Symbol("id");
+var obj = {
+  prop1: 23,
+  [sym]: 65
+}
+```
+
+However, if you try to iterate on `obj`'s properties, then the only accessible is `prop1`. This means that, to access a property identified by a `symbol`, you must to direct access it:
+
+```js
+for (let key in obj) {
+  console.log(key);   // It prints "prop1", but not "sym"
+}
+console.log(obj[sym]);  // It prints "65"
 ```
 
 ## Random numbers

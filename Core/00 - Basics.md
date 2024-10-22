@@ -26,7 +26,7 @@ multi-line comment
 
 - `boolean`;
 - `string`;
-- `symbol`;
+- `symbol`: it is a special data type which works as an unique identifier (see [Symbol](05%20-%20Objects.md#symbol));
 - `number`: it is an 8 byte floating point, so there is no distinction between floating point numbers and integers;
 - `object`.
  
