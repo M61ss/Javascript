@@ -6,6 +6,8 @@
   - [`var`](#var)
   - [`let`](#let)
   - [`const`](#const)
+  - [Special values](#special-values)
+  - [`typeof` operator](#typeof-operator)
   - [Strict mode](#strict-mode)
 - [Operators](#operators)
 
@@ -27,10 +29,6 @@ multi-line comment
 - `symbol`;
 - `number`: it is an 8 byte floating point, so there is no distinction between floating point numbers and integers;
 - `object`.
-
-A variable is `null` since it is not declared. Then, a variable contains `undefined` since it is not initialized.
-
-If a function performs a forbidden operation, then the variable which store the result contains `NaN`.
  
 ## Variables
 
@@ -95,6 +93,21 @@ const MYNAME = "Mattia";
 > [!IMPORTANT] Declaring without initializing
 >
 > When a variable is declared, it contains `undefined` by default.
+
+### Special values
+
+A variable is `null` since it is not declared. Then, a variable contains `undefined` since it is not initialized.
+
+If a function performs a forbidden operation, then the variable which store the result contains `NaN` or `infinite`.
+
+### `typeof` operator
+
+In javascript it is possible to check the type of a variable content using `typeof` operator:
+
+```js
+typeof "something"  // "string"
+typeof 23           // "number"
+```
 
 ### Strict mode
 

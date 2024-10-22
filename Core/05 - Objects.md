@@ -32,6 +32,20 @@ var someObject = {
 };
 ```
 
+The object data type can contain both built-in objects and user defined objects.
+\
+Built-in object types can be:
+
+- `object`; 
+- `array`; 
+- `date`;
+- `map`;
+- `set`;
+- `intarray`;
+- `floatarray`;
+- `promise`; 
+- ...more. 
+
 > [!IMPORTANT] const objects
 >
 > Like arrays, it is impossible to replace a `const` object, but it is possible to modify its properties:
