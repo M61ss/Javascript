@@ -13,7 +13,7 @@
   - [`freeze`](#freeze)
   - [Destructuring assignment](#destructuring-assignment)
   - [Simple fields](#simple-fields)
-  - [Declarative functions](#declarative-functions)
+  - [Declarative functions (methods)](#declarative-functions-methods)
 - [Class](#class)
   - [Getters and setters](#getters-and-setters)
 - [`Symbol`](#symbol)
@@ -51,6 +51,7 @@ var someObject = {
 > [!WARNING] Reference to object
 >
 > Be careful! Variables contains reference to objects, so copying an object inside a variable means that, if you modify properties of that copy, then you will modify also the origial object properties:
+> 
 > ```js
 > var obj1 = {
 >   prop: "value" 
@@ -75,7 +76,7 @@ Built-in object types can be:
 - `intarray`;
 - `floatarray`;
 - `promise`; 
-- ...more, see [MDN Docs - Built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects). 
+- ...more, see [MDN Docs - Built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects).
 
 > [!WARNING]
 >
@@ -89,20 +90,24 @@ var objectProperty = someObject.name;
 
 #### Brackets notation
 
-- Property identified by a number:
+Objects are called also "associative arrays" because it is possible to access their properties using an array-like notation, called "brackets notation".
+\
+That notation is mandatory for:
+
+- Properties identified by a number:
 
   ```js
   var accessKey = 3;
   var objectProperty = someObject[accessKey];
   ```
   
-- Property identified by a string which contains one or more spaces:
+- Properties identified by a string which contains one or more spaces:
 
   ```js
-  var objectProperty = someObject["property with spaces"];
+  var objectProperty = someObject["identifier with spaces"];
   ```
 
-- Property identified by a `symbol`: 
+- Properties identified by a `symbol`: 
 
   ```js
   var mySymbol = new Symbol("id");
@@ -244,7 +249,7 @@ It is possible to create functions that returns object in a very compact way:
 const createPerson = (name, age) => ( { name, age } );
 ```
 
-### Declarative functions
+### Declarative functions (methods)
 
 It is possible in javascript to declare and assign a function to an object property very fast:
 
@@ -257,7 +262,7 @@ var obj = {
 }
 ```
 
-`fun` is an `obj` property for all intents and purposes.
+`fun` is an `obj` property. It works like Java's methods.
 
 ## Class
 

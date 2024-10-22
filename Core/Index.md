@@ -61,7 +61,7 @@
     - [`freeze`](05%20-%20Objects.md#freeze)
     - [Destructuring assignment](05%20-%20Objects.md#destructuring-assignment)
     - [Simple fields](05%20-%20Objects.md#simple-fields)
-    - [Declarative functions](05%20-%20Objects.md#declarative-functions)
+    - [Declarative functions (methods)](05%20-%20Objects.md#declarative-functions-methods)
   - [`Symbol`](05%20-%20Objects.md#symbol)
     - [`Symbol` as property](05%20-%20Objects.md#symbol-as-property)
   - [Class](05%20-%20Objects.md#class)

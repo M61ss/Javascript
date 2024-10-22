@@ -20,6 +20,12 @@ var array = ["First", 23];
 
 To access arrays you can use indexing as for string ([String manipulation](01%20-%20Strings.md#string-manipulation)). Unlike strings, it is possible to change value of elements of arrays.
 
+It is also possible to instantiate an array:
+
+```js
+var array = new Array([5]);   // [5] is the dimension and it is optional
+```
+
 > [!IMPORTANT] const arrays
 >
 > It is impossible to reassign a `const` array, but it is possible to change single values:
