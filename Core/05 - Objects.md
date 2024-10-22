@@ -1,6 +1,7 @@
 # 05 - Objects <!-- omit from toc -->
 
 - [Objects](#objects)
+  - [Object types](#object-types)
   - [Accessing object properties](#accessing-object-properties)
   - [Update object properties](#update-object-properties)
   - [Add object properties](#add-object-properties)
@@ -32,20 +33,6 @@ var someObject = {
 };
 ```
 
-The object data type can contain both built-in objects and user defined objects.
-\
-Built-in object types can be:
-
-- `object`; 
-- `array`; 
-- `date`;
-- `map`;
-- `set`;
-- `intarray`;
-- `floatarray`;
-- `promise`; 
-- ...more. 
-
 > [!IMPORTANT] const objects
 >
 > Like arrays, it is impossible to replace a `const` object, but it is possible to modify its properties:
@@ -70,6 +57,26 @@ Built-in object types can be:
 > ```
 >
 > Then, the `obj2`'s change will reflect on `obj1` property.
+
+### Object types
+
+The object data type can contain both built-in objects and user defined objects.
+\
+Built-in object types can be:
+
+- `object`; 
+- `array`; 
+- `date`;
+- `map`;
+- `set`;
+- `intarray`;
+- `floatarray`;
+- `promise`; 
+- ...more. 
+
+> [!WARNING]
+>
+> Anyway, the `typeof` operator will return `object` if tested on any type of objects listed above.
 
 ### Accessing object properties
 
