@@ -66,3 +66,8 @@
     - [Getters and setters](05%20-%20Objects.md#getters-and-setters)
   - [Random numbers](05%20-%20Objects.md#random-numbers)
     - [Random whole number](05%20-%20Objects.md#random-whole-number)
+
+## Additional resources
+
+- [Javascript - MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Javascript - W3School](https://www.w3schools.com/js/default.asp) (easier than MDN)
