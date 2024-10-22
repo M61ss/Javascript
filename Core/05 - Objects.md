@@ -264,6 +264,10 @@ var obj = {
 
 `fun` is an `obj` property. It works like Java's methods.
 
+> [!NOTE]
+>
+> By default, objects, like all data types, has no methods or properties. However, they can use all methods and properties of `Object` thanks javascript autoboxing feature.
+
 ## Class
 
 An object can be created also as `class`, so that you can instantiate a class, like Java, and you have the possibility to use a constructor, getters and setters:
