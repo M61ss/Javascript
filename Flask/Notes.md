@@ -38,3 +38,16 @@ So, the template can be reused to build the entire site extending it, implementi
 
 ## Static contents
 
+Static contents are all static resources of the site. They have to be saved inside the `static` folder, which have to be placed inside the root folder of the site.
+\
+For example, we can access data stored in `static/css/main.css` file using this notation:
+
+**`file1.html`**:
+
+```html
+<!-- stuff -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<!-- stuff -->
+```
+
+It works at the same way for all resources, so also for `.js` files.
