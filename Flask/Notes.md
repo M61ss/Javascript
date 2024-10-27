@@ -1,5 +1,9 @@
 # Flask
 
+> [!WARNING]
+>
+> For detailed informations, like imports, functions, implementations, etc., see sample application and try to run it.
+
 ## Dependencies
 
 ```shell
