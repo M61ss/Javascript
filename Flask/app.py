@@ -22,7 +22,8 @@ class Todo(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    # This way I can control the request method, then redirect by consequence
+    # If the request if a POST request, I have to manage some information passed by the user.
+    # Here I am adding a new task, so I am staying in the same page, simply refreshing it with new data obtained from the form
     if request.method == 'POST':
         task_content = request.form['content']  # 'content' is the name of the input field used in 'index.html' form
         new_task = Todo(content=task_content)
@@ -31,11 +32,14 @@ def index():
         try:
             db.session.add(new_task)
             db.session.commit()
+            # Redirect to the same page necessary to see new data
             return redirect('/')
         except:
             return 'There was an issue adding your task'
+    # If the request is a GET, then the user is just requesting resources (the page itself, in this case)
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
+        # This is where I satify the user request
         return render_template('index.html', tasks=tasks)
 
 @app.route('/delete/<int:id>')
@@ -48,6 +52,20 @@ def delete(id):
         return redirect('/')
     except:
         return 'There was an issue deleting your task'
+
+@app.route('/update/<int:id>', methods=['POST', 'GET'])
+def update(id):
+    task = Todo.query.get_or_404(id)
+    if request.method == 'POST':
+        task.content = request.form['content']
+        
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was an issue updating your task'
+    else:
+        return render_template('update.html', task=task)
 
 if __name__ == "__main__":
     app.run(debug=True)
