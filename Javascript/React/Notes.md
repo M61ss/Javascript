@@ -126,6 +126,62 @@ class Car extends React.Component {
 ReactDOM.render(<Car nome="Audi"/>, document.getElementById('root'));
 ```
 
+### `state`
+
+It works like `props`, but it is mutable. Every change performed on its properties updates the correspondent component.
+
+To update `state` you must use `setState()` method.
+
+> [!WARNING]
+>
+> It is very discouraged to use objects or classes with `state`.
+
+### Constructor
+
+The class constructor is useful to initialize components' state and to initialize event handling.
+
+```js
+class Car extends React.Component {
+  constructor() {
+    super();
+    this.state = {color: "red"};
+  }
+
+  render() {
+    return <h2>I am a {this.state.color} Car!</h2>;
+  }
+}
+ReactDOM.render(<Car />, document.getElementById('root'));
+```
+
+## Event handling in JSX
+
+```html
+<button onClick={doSomething}>
+  Do something
+</button>
+```
+
+Remember the "classic" HTML syntax:
+
+```html
+<button onclick="doSomething()">
+  Do something
+</button>
+```
+
+### `e`
+
+`e` is a parameter called "synthetic event". It is defined by W3C specifications. 
+\
+React events work a bit differently from native events.
+
+See [this](https://it.reactjs.org/docs/events.html).
+
+> [!IMPORTANT]
+>
+> To correctly invoke the event handler, it is necessary that the component is its invoker.
+
 ## Installation
 
 ### Node.js
