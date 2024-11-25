@@ -170,17 +170,36 @@ Remember the "classic" HTML syntax:
 </button>
 ```
 
-### `e`
+### `event`
 
-`e` is a parameter called "synthetic event". It is defined by W3C specifications. 
+`event` is a `SyntheticEvent`. It is a wrapper for native browser events which provides a cross-browser interface for DOM events. It is defined by W3C specifications. 
 \
 React events work a bit differently from native events.
 
 See [this](https://it.reactjs.org/docs/events.html).
 
-> [!IMPORTANT]
+> [!TIP] preventDefault()
 >
-> To correctly invoke the event handler, it is necessary that the component is its invoker.
+> If you want to avoid the default handling of an event, run inside the method:
+>
+> ```js
+> handleSubmit(event) {
+>   // ...
+>   event.preventDefault();
+>   // Non default behaviour...
+> }
+> ```
+
+### `SyntheticEvent` invokation
+
+To correctly invoke the event handler, it is necessary to bind the invokation to its component. Two ways are possible:
+
+- ```html
+  <button onClick={this.handleClick}>
+  ```
+- ```js
+  this.handleClick = this.handleClick.bind(this);
+  ```
 
 ## Installation
 
