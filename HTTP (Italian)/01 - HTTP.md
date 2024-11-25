@@ -182,6 +182,17 @@ _Esempio_:
 - **OPTIONS**: serve per richiedere informazioni sulle opzioni disponibili per la comunicazione.
 - **TRACE**: è usato per invocare il loop-back remoto a livello applicativo del messaggio di richiesta. Consente al client di vedere che cosa è stato ricevuto dal server e viene usato nella diagnostica e testing dei serivizi web.
 
+**Riassumendo**:
+
+
+| Metodo     | Scopo                  | Descrizione                  |
+| ---------- | ---------------------- | ---------------------------- |
+| **GET**    | Lettura                | Recupera dati                |
+| **POST**   | Creazione              | Invia nuovi dati             |
+| **PUT**    | Aggiornamento          | Sostituisce l'intera risorsa |
+| **PATCH**  | Aggiornamento parziale | Modifica campi specifici     |
+| **DELETE** | Rimozione              | Elimina una risorsa          |
+
 > [!NOTE] CGI - Common Gateway Interface
 >
 > CGI viene utilizzata dai web server per interfacciarsi con applicazioni esterne generando contenuti web dinamici.
